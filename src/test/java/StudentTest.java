@@ -8,26 +8,26 @@ import static org.junit.Assert.*;
 public class StudentTest {
 
     Student student;
-    Student shelby = new Student(324, "shelby");
 
     @Before
     public void setUp() {
-        shelby.addGrade(34);
+    this.student = new Student(324, "shelby");
+        student.addGrade(50);
     }
 
-//    @Test
-//    public void testName() {
-//        assertEquals(name, Student.name);
-//    }
-//
-//    @Test
-//    public void testId() {
-//        assertEquals(id, Student.id);
-//    }
+    @Test
+    public void testName() {
+        assertEquals();
+    }
+
+    @Test
+    public void testId() {
+        assertEquals(id, Student.id);
+    }
 
     @Test
     public void testGrade(){
-        assertEquals(1, shelby.getGrades().size());
+        assertEquals(1, student.getGrades().size());
 
     }
 

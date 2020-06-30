@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Student {
 
-    public static String name;
-    public static long id;
-    public static ArrayList<Integer> grades;
+//    public static String name;
+//    public static long id;
+//    public static ArrayList<Integer> grades;
 
-//    private long id;
-//    private String name;
-//    private ArrayList<Integer> grades;
+    private long id;
+    private String name;
+    private ArrayList<Integer> grades;
 
     public Student(long id, String name){
         this.id = id;
