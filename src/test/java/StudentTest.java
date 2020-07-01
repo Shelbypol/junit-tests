@@ -15,6 +15,8 @@ public class StudentTest {
         student.addGrade(50);
         student.addGrade(100);
         student.addGrade(80);
+        student.updateGrade(0, 70);
+        student.updateGrade(2, 90);
     }
 
     @Test
@@ -31,9 +33,7 @@ public class StudentTest {
 
     @Test
     public void testUpdateGrade(){
-        student.updateGrade(1, 60);
-        int num = 60;
-        assertTrue(num == student.getGrades().get(1));
+        assertTrue(90 == student.getGrades().get(2));
     }
 
 

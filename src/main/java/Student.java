@@ -6,13 +6,13 @@ public class Student {
     //======= PROPERTIES
     private long id;
     private String name;
-    private static ArrayList<Integer> grades;
+    private ArrayList<Integer> grades;
 
     //======= CONSTRUCTOR
     public Student(long id, String name) {
         this.id = id;
         this.name = name;
-        this.grades = new ArrayList<Integer>();
+        this.grades = new ArrayList<>();
     }
 
     //======= ADD GRADE
@@ -40,18 +40,19 @@ public class Student {
         return name;
     }
 
-    public static ArrayList<Integer> getGrades() {
+    public ArrayList<Integer> getGrades() {
         return grades;
     }
 
-    public static int updateGrade(int numOfGradeIndexToChange, int changeGradeToWhat) {
-        return getGrades().set(numOfGradeIndexToChange, changeGradeToWhat);
+    public int updateGrade(int numOfGradeIndexToChange, int changeGradeToWhat) {
+        return grades.set(numOfGradeIndexToChange, changeGradeToWhat);
     }
 
-    public static void main(String[] args) {
-        System.out.println(updateGrade(1, 60));
-        System.out.println(getGrades().toString());
+
+
+
+
+
     }
 
-}
 
