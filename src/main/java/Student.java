@@ -48,6 +48,10 @@ public class Student {
         return grades.set(numOfGradeIndexToChange, changeGradeToWhat);
     }
 
+    public int deleteGrade(int gradeIndexToDelete){
+        return grades.remove(gradeIndexToDelete);
+    }
+
 
 
 

@@ -17,6 +17,7 @@ public class StudentTest {
         student.addGrade(80);
         student.updateGrade(0, 70);
         student.updateGrade(2, 90);
+        student.deleteGrade(1);
     }
 
     @Test
@@ -33,9 +34,14 @@ public class StudentTest {
 
     @Test
     public void testUpdateGrade(){
+        assertTrue(70 == student.getGrades().get(0));
         assertTrue(90 == student.getGrades().get(2));
     }
 
+    @Test
+    public void testDeleteGrade(){
+        assertTrue(2 == student.getGrades().size());
+    }
 
 
 }
