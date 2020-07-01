@@ -11,24 +11,31 @@ public class StudentTest {
 
     @Before
     public void setUp() {
-    this.student = new Student(324, "shelby");
+        this.student = new Student(324, "shelby");
         student.addGrade(50);
+        student.addGrade(100);
+        student.addGrade(80);
     }
 
     @Test
-    public void testName() {
-        assertEquals();
+    public void testConstructor() {
+        assertEquals("Check if name is in the Constructor", "shelby", student.getName());
+        assertEquals("Check if 'id' is in the Constructor", 324, student.getId());
+        assertEquals("Check if size of the grades array matches", 2, student.getGrades().size());
     }
 
     @Test
-    public void testId() {
-        assertEquals(id, Student.id);
+    public void testGetGradeAverage(){
+        assertEquals("Check if average is returned", 75, student.getGradeAverage(), 0);
     }
 
     @Test
-    public void testGrade(){
-        assertEquals(1, student.getGrades().size());
-
+    public void testUpdateGrade(){
+        student.updateGrade(1, 60);
+        int num = 60;
+        assertTrue(num == student.getGrades().get(1));
     }
+
+
 
 }

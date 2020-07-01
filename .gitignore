@@ -1,3 +1,11 @@
-*.iml
-.idea
-target
+# MacOS
+         .DS_Store
+
+         # IntelliJ
+         .idea/*
+         *.iml
+
+         # Compiled output
+         out/*
+
+         target /*
