@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class StudentTest {
 
-    Student student;
+//    Student student;
 
 //    @Before
 //    public void setUp() {
