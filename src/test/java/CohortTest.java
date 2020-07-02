@@ -11,7 +11,8 @@ public class CohortTest {
     @Before
     public void setup() {
         cohort = new Cohort();
-        student = new Student(1L, "Shelby");
+        student = new Student(0L, "Shelby");
+
     }
 
     @Test
@@ -48,6 +49,25 @@ public class CohortTest {
 
 
         assertEquals(75, cohort.getCohortAverage(), 0);
+    }
+
+    @Test
+    public void testFindStudentById(){
+        Student student1 = new Student(1L, "Shelby");
+        student1.addGrade(100);
+        cohort.addStudent(student1);
+
+        Student student2 = new Student(2L, "John");
+        student2.addGrade(50);
+        cohort.addStudent(student2);
+
+        Student student3 = new Student(3098, "Tim");
+        student3.addGrade(75);
+        cohort.addStudent(student3);
+
+        assertEquals("John", cohort.findStudentById(2));
+        assertEquals("Shelby", cohort.findStudentById(1));
+        assertEquals("Tim", cohort.findStudentById(3098));
     }
 
 }
