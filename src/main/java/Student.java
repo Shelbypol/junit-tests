@@ -30,8 +30,6 @@ public class Student {
         return bucket / grades.size();
     }
 
-    //
-
     //======= GETTERS & SETTERS
     public long getId() {
         return this.id;
@@ -49,17 +47,11 @@ public class Student {
         return grades.set(numOfGradeIndexToChange, changeGradeToWhat);
     }
 
-    public int deleteGrade(int gradeIndexToDelete){
+    public int deleteGrade(int gradeIndexToDelete) {
         return grades.remove(gradeIndexToDelete);
     }
 
 
-
-
-
-
-
-
-    }
+}
 
 

@@ -7,35 +7,14 @@ public class CohortTest {
 
     Cohort cohort;
     Student student;
+    Student student1;
 
     @Before
     public void setup() {
         cohort = new Cohort();
         student = new Student(0L, "Shelby");
 
-    }
-
-    @Test
-    public void testAddStudent() {
-        assertEquals(0, cohort.getStudents().size());
-
-        cohort.addStudent(student);
-        assertEquals(1, cohort.getStudents().size(), 0);
-    }
-
-
-    @Test
-    public void testGetStudents() {
-        assertTrue(cohort.getStudents().isEmpty());
-
-        cohort.addStudent(student);
-        assertEquals(1, cohort.getStudents().size());
-        assertEquals(student, cohort.getStudents().get(0));
-    }
-
-    @Test
-    public void testGetCohortAverage() {
-        Student student1 = new Student(1L, "Shelby");
+        student1 = new Student(1L, "Shelby");
         student1.addGrade(100);
         cohort.addStudent(student1);
 
@@ -46,25 +25,29 @@ public class CohortTest {
         Student student3 = new Student(3L, "Tim");
         student3.addGrade(75);
         cohort.addStudent(student3);
+    }
 
+    @Test
+    public void testAddStudent() {
+//      assertEquals(0, cohort.getStudents().size());
 
+        cohort.addStudent(student);
+        assertEquals(4, cohort.getStudents().size(), 0);
+    }
+
+    @Test
+    public void testGetStudents() {
+        assertEquals(3, cohort.getStudents().size());
+        assertEquals(student1, cohort.getStudents().get(0));
+    }
+
+    @Test
+    public void testGetCohortAverage() {
         assertEquals(75, cohort.getCohortAverage(), 0);
     }
 
     @Test
-    public void testFindStudentById(){
-        Student student1 = new Student(1L, "Shelby");
-        student1.addGrade(100);
-        cohort.addStudent(student1);
-
-        Student student2 = new Student(2L, "John");
-        student2.addGrade(50);
-        cohort.addStudent(student2);
-
-        Student student3 = new Student(3098, "Tim");
-        student3.addGrade(75);
-        cohort.addStudent(student3);
-
+    public void testFindStudentById() {
         assertEquals("John", cohort.findStudentById(2));
         assertEquals("Shelby", cohort.findStudentById(1));
         assertEquals("Tim", cohort.findStudentById(3098));
