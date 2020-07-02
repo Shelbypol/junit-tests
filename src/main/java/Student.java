@@ -1,12 +1,13 @@
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
 
     //======= PROPERTIES
     private long id;
     private String name;
-    private ArrayList<Integer> grades;
+    private List<Integer> grades;
 
     //======= CONSTRUCTOR
     public Student(long id, String name) {
@@ -40,7 +41,7 @@ public class Student {
         return name;
     }
 
-    public ArrayList<Integer> getGrades() {
+    public List<Integer> getGrades() {
         return grades;
     }
 
