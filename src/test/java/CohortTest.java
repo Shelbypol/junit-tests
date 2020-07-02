@@ -22,14 +22,14 @@ public class CohortTest {
         student2.addGrade(50);
         cohort.addStudent(student2);
 
-        Student student3 = new Student(3L, "Tim");
+        Student student3 = new Student(3098, "Tim");
         student3.addGrade(75);
         cohort.addStudent(student3);
     }
 
     @Test
     public void testAddStudent() {
-//      assertEquals(0, cohort.getStudents().size());
+      assertFalse(cohort.getStudents().isEmpty());
 
         cohort.addStudent(student);
         assertEquals(4, cohort.getStudents().size(), 0);
@@ -38,7 +38,7 @@ public class CohortTest {
     @Test
     public void testGetStudents() {
         assertEquals(3, cohort.getStudents().size());
-        assertEquals(student1, cohort.getStudents().get(0));
+        assertSame(student1, cohort.getStudents().get(0));
     }
 
     @Test

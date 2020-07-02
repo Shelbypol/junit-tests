@@ -23,7 +23,7 @@ public class StudentTest {
     public void testConstructor() {
         assertEquals("Check if name is in the Constructor", "Shelby", student.getName());
         assertEquals("Check if 'id' is in the Constructor", 1L, student.getId());
-        assertTrue("Check if size of the grades array matches", student.getGrades().isEmpty());
+        assertFalse("Check if size of the grades array matches", student.getGrades().isEmpty());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class StudentTest {
 
     @Test
     public void testGetGradeAverage() {
-        assertEquals("Check if average is returned", 75, student.getGradeAverage(), 0);
+        assertEquals("Check if average is returned", 80, student.getGradeAverage(), 0);
     }
 
     @Test
